@@ -1,8 +1,16 @@
 import { Categoria } from "./clases.js"
 var tabla = document.getElementById('tabla')
 const apiUrl = 'https://api.chucknorris.io/jokes/categories'
-
+var randomBtn=document.getElementById('random')
 obtenerCategorias()
+
+
+
+randomBtn.addEventListener('click',function(){
+    let c=new Categoria('aleatorio')
+    establecerCategoria(c)
+    window.location.href='frase.html'
+})
 
 
 async function obtenerCategorias() {
@@ -21,6 +29,7 @@ async function obtenerCategorias() {
         return false
     }
 }
+
 
 
 function pintarCategorias(categorias) {
